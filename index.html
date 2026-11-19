@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brew & Bite | Cafe Ordering</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <h1 class="logo">Brew & Bite</h1>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#reservation">Reserve Table</a>
+    </nav>
+    <button id="cart-toggle" class="cart-btn">Cart (<span id="cart-count">0</span>)</button>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Fresh Coffee & Warm Pastries</h2>
+    <p>Order online for quick pickup or reserve your favorite corner table.</p>
+    <a href="#menu" class="btn">Explore Menu</a>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="menu-section">
+    <h2>Our Menu</h2>
+    
+    <!-- Category Filter Buttons -->
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="coffee">Coffee</button>
+      <button class="filter-btn" data-category="pastry">Pastries</button>
+    </div>
+
+    <!-- Menu Grid (Populated via JS or static HTML) -->
+    <div class="menu-grid" id="menu-grid">
+      <div class="menu-card" data-category="coffee">
+        <h3>Cappuccino</h3>
+        <p>Rich espresso topped with velvety steamed milk foam.</p>
+        <div class="card-footer">
+          <span class="price">₹180</span>
+          <button class="add-to-cart" data-name="Cappuccino" data-price="180">Add +</button>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="coffee">
+        <h3>Iced Caramel Latte</h3>
+        <p>Chilled espresso with milk and sweet caramel drizzle.</p>
+        <div class="card-footer">
+          <span class="price">₹220</span>
+          <button class="add-to-cart" data-name="Iced Caramel Latte" data-price="220">Add +</button>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="pastry">
+        <h3>Butter Croissant</h3>
+        <p>Flaky, golden-baked French pastry served warm.</p>
+        <div class="card-footer">
+          <span class="price">₹150</span>
+          <button class="add-to-cart" data-name="Butter Croissant" data-price="150">Add +</button>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="pastry">
+        <h3>Chocolate Muffin</h3>
+        <p>Soft dark chocolate muffin loaded with choco chips.</p>
+        <div class="card-footer">
+          <span class="price">₹140</span>
+          <button class="add-to-cart" data-name="Chocolate Muffin" data-price="140">Add +</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sliding Cart Sidebar -->
+  <aside id="cart-sidebar" class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Order</h3>
+      <button id="close-cart">✕</button>
+    </div>
+    <ul id="cart-items"></ul>
+    <div class="cart-footer">
+      <p>Total: ₹<span id="cart-total">0</span></p>
+      <button id="checkout-btn" class="btn">Place Order</button>
+    </div>
+  </aside>
+
+  <!-- Table Reservation Section -->
+  <section id="reservation" class="reservation-section">
+    <h2>Reserve a Table</h2>
+    <form id="booking-form">
+      <input type="text" id="guest-name" placeholder="Your Name" required>
+      <input type="number" id="guest-count" placeholder="Number of Guests (1-10)" min="1" max="10" required>
+      <input type="time" id="booking-time" required>
+      <button type="submit" class="btn">Confirm Booking</button>
+    </form>
+    <p id="booking-message"></p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
